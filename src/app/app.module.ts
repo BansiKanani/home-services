@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,6 @@ import { CustomerLoginComponent } from './logins/customer-login/customer-login.c
 import { WorkerLoginComponent } from './logins/worker-login/worker-login.component';
 import { AdminLoginComponent } from './logins/admin-login/admin-login.component';
 import { ForgetPasswordComponent } from './logins/forget-password/forget-password.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +18,12 @@ import { ForgetPasswordComponent } from './logins/forget-password/forget-passwor
     AdminLoginComponent,
     ForgetPasswordComponent
   ],
-  imports: [
+  imports: [BrowserModule,
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
-  ],
+    FormsModule,
+    ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
