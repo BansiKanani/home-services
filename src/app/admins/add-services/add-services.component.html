@@ -1,24 +1,37 @@
 <app-header></app-header>
 <div id="wrapper">
   <app-sidebar></app-sidebar>
-  <form>
+  <form [formGroup]="addServiceForm" (ngSubmit)="onSubmit(addServiceForm.value)">
     <div class="container">
+
       <label for="name"><b>Service Name</b></label>
-      <input
+
+      <input formControlName="service_name"
         type="text"
         placeholder="Enter Service Name"
         name="name"
         required
       />
+
       <label for="address"><b>Description</b></label>
-      <textarea rows="5" cols="5" placeholder="Enter Description"></textarea>
+
+      <input formControlName="service_description"
+        type="text"
+        placeholder="Enter Service Name"
+        name="name"
+        required
+      />
+
+
+      <!-- <textarea formControlName="service_description" rows="5" cols="5" placeholder="Enter Description"></textarea>
       <label for="name"><b>Image Upload</b></label>
       <input
         type="file"
         placeholder="Enter Service Name"
         name="name"
         required
-      />
+      /> -->
+
       <br>
       <button type="submit" class="btn btn-danger" style="width:10%">
         Cancel
