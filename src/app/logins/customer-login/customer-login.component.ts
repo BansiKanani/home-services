@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { LoginService } from '../login.service';
 
@@ -7,8 +7,10 @@ import { LoginService } from '../login.service';
   templateUrl: './customer-login.component.html',
   styleUrls: ['./customer-login.component.scss']
 })
-export class CustomerLoginComponent implements OnInit {
+export class CustomerLoginComponent implements OnInit, OnDestroy {
   loginForm;
+  loginSub;
+  loginpass = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -18,9 +20,24 @@ export class CustomerLoginComponent implements OnInit {
   }
 
   onSubmit(userData) {
-    this.loginService.authenticate(userData, "customer");
+    this.loginSub = this.loginService.authenticate(userData, 'customer');
     this.loginForm.reset();
+
+    this.loginSub.subscribe(
+      value => {
+        this.loginpass = true;
+        this.loginService.setUser(value.user, 'customer');
+      },
+      err => console.error(err)
+    );
+  }
+  ngOnInit() {}
+
+  ngOnDestroy() {
+    this.loginSub.unsubscribe();
   }
 
-  ngOnInit() {}
+  onLogOut() {
+    this.loginService.removeUser();
+  }
 }

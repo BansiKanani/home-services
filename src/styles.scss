@@ -1,1 +1,238 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.wrappernav {
+  height:4em;
+}
+
+.navbar {
+  height: 4em;
+  width: 100%;
+}
+
+.navbar-header {
+  padding: 0;
+  margin: 0;
+  right: 48%;
+  left: 48%;
+  top: 5px;
+  position: absolute;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 23px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #818181;
+  padding: 0;
+  margin: 0;
+  border: none;
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+}
+
+.openbtn:hover {
+  color: #fff;
+}
+
+.openbtn2 {
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #818181;
+  padding: 0 20px 0 0;
+  border: none;
+  z-index: 5;
+  position: absolute;
+  right: 10px;
+  top: 17px;
+}
+
+.openbtn2:hover {
+  color: #fff;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 9px;
+}
+
+table {
+  border: 1px solid #ccc;
+}
+
+.row {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row [class^="col-"] {
+  float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+  border: 1px solid #ccc;
+  align-content: center;
+  text-align: left;
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+.set-button {
+  margin-left: 45%;
+  margin-right: 45%;
+  margin-bottom: 7px;
+}
+
+.navbar-nav {
+  width: 30px;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1000px) {
+  .row [class^="col-"]:not(:last-child) {
+      margin-right: 3rem;
+      margin-left: 3rem;
+  }
+
+  .row [class^="col-"]:not(:first-child) {
+      margin-right: 3rem;
+      margin-left: 3rem;
+  }
+
+  .row .col-1-of-2 {
+      width: calc((100% - 6rem) / 1);
+      border: 1px solid #ccc;
+      align-content: center;
+      text-align: left;
+      margin-bottom: 20px;
+      height: 250px;
+  }
+
+  .set-button {
+      margin-left: 41%;
+      margin-right: 41%;
+      margin-bottom: 10px;
+  }
+}
+
+.navbar-nav {
+  width: 30px;
+}
+
+.grid-test {
+  position: relative;
+  width: 100%;
+  padding-left: 9%;
+  padding-right: 9%;
+}
+
+.btn-block {
+    width: auto;
+    margin: 5px;
+    border-color: transparent;
+}
+
+.btn:active {
+    border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-nav {
+    width: 30px;
+    position: relative;
+    left: 98%;
+    right: 2%;
+    margin: 0px 0px;
+    margin-left: -20px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    bottom: 7px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .set-button {
+      margin-left: 32%;
+      margin-right: 32%;
+      margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+    width: 30px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+  .sidebar a {
+      font-size: 18px;
+  }
+}
