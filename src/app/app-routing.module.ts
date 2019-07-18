@@ -10,6 +10,7 @@ import { ExistingWorkersComponent } from './admins/existing-workers/existing-wor
 import { NewWorkersComponent } from './admins/new-workers/new-workers.component';
 import { ServicesListComponent } from './admins/services-list/services-list.component';
 import { WorkerDetailsComponent } from './admins/worker-details/worker-details.component';
+import { ServiceRequestComponent } from './customers/service-request/service-request.component';
 
 
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'admin/existing_workers', component: ExistingWorkersComponent },
   { path: 'admin/new_workers', component: NewWorkersComponent },
   { path: 'admin/services_list', component: ServicesListComponent},
-  { path: 'admin/worker_details', component: WorkerDetailsComponent}
+  { path: 'admin/worker_details', component: WorkerDetailsComponent},
+  { path: 'user/service_request', component: ServiceRequestComponent}
   // { path: '/admin/assignments', component: WorkerDetailsComponent}
 ];
 

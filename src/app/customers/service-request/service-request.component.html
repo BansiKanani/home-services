@@ -1,0 +1,25 @@
+<h1 style="margin-left:5%">{{selectedService}}</h1>
+
+<form [formGroup]="serviceRequestForm" (ngSubmit)="sendRequest(serviceRequestForm.value)" style="border:1px solid #ccc;">
+  <div class="container abc">
+
+    <label for="address"><b>Description</b></label>
+    <input formControlName="description" type="text" placeholder="Enter full description" name="description" required />
+
+    <br> <br>
+
+    <label for="name"><b>Name</b></label>
+    <input formControlName="name" type="text" placeholder="Enter Name" name="name" required />
+
+    <label for="address"><b>Address</b></label>
+    <input formControlName="address" type="text" placeholder="Address" name="address" required />
+
+    <label for="name"><b>Pincode</b></label>
+    <input formControlName="pincode" type="number" placeholder="Enter Pincode" name="pincode" required />
+
+    <label for="number"><b>Contact Number</b></label>
+    <input formControlName="phone" type="number" placeholder="Enter contact number" name="name" required />
+
+    <button type="submit" class="btn btn-danger"> Request </button>
+  </div>
+</form>

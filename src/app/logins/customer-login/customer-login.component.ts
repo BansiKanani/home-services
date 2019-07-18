@@ -1,43 +1,35 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { LoginService } from '../login.service';
+import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Customer } from './../../models/customer';
 
 @Component({
   selector: 'app-customer-login',
   templateUrl: './customer-login.component.html',
   styleUrls: ['./customer-login.component.scss']
 })
-export class CustomerLoginComponent implements OnInit, OnDestroy {
+export class CustomerLoginComponent {
+  login = false;
+  customerObj;
   loginForm;
-  loginSub;
-  loginpass = false;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private loginService: LoginService
-  ) {
-    this.loginForm = this.formBuilder.group({ userid: '', password: '' });
-  }
+  constructor(private cookie: CookieService, private http: HttpClient) {}
 
-  onSubmit(userData) {
-    this.loginSub = this.loginService.authenticate(userData, 'customer');
-    this.loginForm.reset();
-
-    this.loginSub.subscribe(
-      value => {
-        this.loginpass = true;
-        this.loginService.setUser(value.user, 'customer');
-      },
-      err => console.error(err)
-    );
-  }
-  ngOnInit() {}
-
-  ngOnDestroy() {
-    this.loginSub.unsubscribe();
+  onLogIn() {
+    this.login = true;
+    this.http
+      .get('http://localhost:3000/api/customers')
+      .subscribe(
+        user => {
+          this.cookie.set('customer', JSON.stringify(user[0]));
+          // console.log(JSON.parse(this.cookie.get('customer')));
+        },
+        err => console.error(err)
+      );
   }
 
   onLogOut() {
-    this.loginService.removeUser();
+    this.cookie.delete('customer');
+    this.login = false;
   }
 }

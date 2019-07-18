@@ -18,6 +18,7 @@ import { NewWorkersComponent } from './admins/new-workers/new-workers.component'
 import { ServicesListComponent } from './admins/services-list/services-list.component';
 import { SidebarComponent } from './admins/sidebar/sidebar.component';
 import { WorkerDetailsComponent } from './admins/worker-details/worker-details.component';
+import { ServiceRequestComponent } from './customers/service-request/service-request.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { WorkerDetailsComponent } from './admins/worker-details/worker-details.c
     NewWorkersComponent,
     ServicesListComponent,
     SidebarComponent,
-    WorkerDetailsComponent
+    WorkerDetailsComponent,
+    ServiceRequestComponent
   ],
   imports: [
     BrowserModule,
