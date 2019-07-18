@@ -1,0 +1,50 @@
+* {
+  margin: 3px 0px 0px 0px;
+  padding: 0px;
+}
+
+.mobile-nav-bar {
+  background-color: black;
+  bottom: 50px;
+  height: 4rem;
+}
+
+.mobile-nav-bar a {
+  color: #fefefe;
+}
+
+.title-bar-left {
+  bottom: 50px;
+  margin-bottom: 5px;
+  padding: 10px;
+  /* margin: auto; */
+}
+
+span,
+h1 {
+  color: white;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+}
+
+.profile {
+  margin: auto;
+  padding: auto;
+}
+
+.profile {
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #818181;
+  padding: 0 20px 0px 0;
+  border: none;
+  z-index: 5;
+  position: absolute;
+  right: 10px;
+  top: 17px;
+}

@@ -11,6 +11,8 @@ import { NewWorkersComponent } from './admins/new-workers/new-workers.component'
 import { ServicesListComponent } from './admins/services-list/services-list.component';
 import { WorkerDetailsComponent } from './admins/worker-details/worker-details.component';
 import { ServiceRequestComponent } from './customers/service-request/service-request.component';
+import { WorkerIndexComponent } from './workers/worker-index/worker-index.component';
+import { WorkerNextComponent } from './workers/worker-next/worker-next.component';
 
 
 
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: 'admin/new_workers', component: NewWorkersComponent },
   { path: 'admin/services_list', component: ServicesListComponent},
   { path: 'admin/worker_details', component: WorkerDetailsComponent},
-  { path: 'user/service_request', component: ServiceRequestComponent}
+  { path: 'customer/service_request', component: ServiceRequestComponent},
+  { path: 'worker/index', component: WorkerIndexComponent },
+  { path: 'worker/next', component: WorkerNextComponent}
   // { path: '/admin/assignments', component: WorkerDetailsComponent}
 ];
 

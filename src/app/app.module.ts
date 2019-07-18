@@ -19,6 +19,9 @@ import { ServicesListComponent } from './admins/services-list/services-list.comp
 import { SidebarComponent } from './admins/sidebar/sidebar.component';
 import { WorkerDetailsComponent } from './admins/worker-details/worker-details.component';
 import { ServiceRequestComponent } from './customers/service-request/service-request.component';
+import { WorkerHeaderComponent } from './workers/worker-header/worker-header.component';
+import { WorkerIndexComponent } from './workers/worker-index/worker-index.component';
+import { WorkerNextComponent } from './workers/worker-next/worker-next.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,10 @@ import { ServiceRequestComponent } from './customers/service-request/service-req
     ServicesListComponent,
     SidebarComponent,
     WorkerDetailsComponent,
-    ServiceRequestComponent
+    ServiceRequestComponent,
+    WorkerHeaderComponent,
+    WorkerIndexComponent,
+    WorkerNextComponent
   ],
   imports: [
     BrowserModule,
