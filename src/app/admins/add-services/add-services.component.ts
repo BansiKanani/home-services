@@ -24,7 +24,7 @@ export class AddServicesComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
   onSubmit(serviceData) {
-    const rootUrl = 'http://localhost:3000/api/services';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/services';
     const body = { name: serviceData.service_name, description: serviceData.service_description };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.addServiceForm.reset();

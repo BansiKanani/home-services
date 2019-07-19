@@ -22,6 +22,8 @@ import { ServiceRequestComponent } from './customers/service-request/service-req
 import { WorkerHeaderComponent } from './workers/worker-header/worker-header.component';
 import { WorkerIndexComponent } from './workers/worker-index/worker-index.component';
 import { WorkerNextComponent } from './workers/worker-next/worker-next.component';
+import { WorkerRegistrationComponent } from './workers/worker-registration/worker-registration.component';
+import { CustomerRegistrationComponent } from './customers/customer-registration/customer-registration.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { WorkerNextComponent } from './workers/worker-next/worker-next.component
     ServiceRequestComponent,
     WorkerHeaderComponent,
     WorkerIndexComponent,
-    WorkerNextComponent
+    WorkerNextComponent,
+    WorkerRegistrationComponent,
+    CustomerRegistrationComponent
   ],
   imports: [
     BrowserModule,

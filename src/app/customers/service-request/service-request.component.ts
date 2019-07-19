@@ -15,8 +15,19 @@ export class ServiceRequestComponent {
   rootUrl;
   subscription;
   serviceRequestForm;
-  constructor(private http: HttpClient, private cookie: CookieService, private formBuilder: FormBuilder) {
+  constructor(
+    private http: HttpClient,
+    private cookie: CookieService,
+    private formBuilder: FormBuilder
+  ) {
+    this.saveServiceObj();
     this.serviceRequestForm = this.formBuilder.group({
+      // name: '',
+      // address: '',
+      // pincode: '',
+      // phone: '',
+      // email: '',
+      // description: ''
       name: JSON.parse(this.cookie.get('customer')).name,
       address: JSON.parse(this.cookie.get('customer')).address,
       pincode: JSON.parse(this.cookie.get('customer')).pincode,
@@ -25,24 +36,24 @@ export class ServiceRequestComponent {
       description: ''
     });
     this.selectedService = JSON.parse(this.cookie.get('service')).name;
-    // this.saveServiceObj();
   }
 
   sendRequest(customerData) {
-    const rootUrl = 'http://localhost:3000/api/orders';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/orders';
     const body = {
       customerId: JSON.parse(this.cookie.get('customer'))._id,
-      serviceId: JSON.parse(this.cookie.get('service'))._id,
+      // serviceId: JSON.parse(this.cookie.get('service'))._id,
       description: customerData.description,
       date: new Date(),
       address: customerData.address,
       pincode: customerData.pincode,
       phone: customerData.phone,
       status: 'ordered',
-      workerId: null
+      workerId: null,
+      customerName: customerData.name
     };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    this.serviceRequestForm.reset();
+    // this.serviceRequestForm.reset();
     this.subscription = this.http.post(rootUrl, body, { headers }).subscribe(
       value => {
         console.log(value);
@@ -57,9 +68,7 @@ export class ServiceRequestComponent {
   }
 
   saveServiceObj() {
-    this.http
-    .get('http://localhost:3000/api/services')
-    .subscribe(
+    this.http.get('https://home-services-api.herokuapp.com/api/services').subscribe(
       service => {
         this.cookie.set('service', JSON.stringify(service[0]));
         // console.log(JSON.parse(this.cookie.get('customer')));

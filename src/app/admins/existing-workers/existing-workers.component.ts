@@ -12,7 +12,7 @@ export class ExistingWorkersComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    const rootUrl = 'http://localhost:3000/api/workers';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/workers';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.subscription = this.http.get<any[]>(`${rootUrl}?isVerified=true`, { headers }).subscribe(
       value => {
@@ -28,7 +28,7 @@ export class ExistingWorkersComponent implements OnInit, OnDestroy {
   }
 
   onDelete(workerId) {
-    const rootUrl = 'http://localhost:3000/api/workers';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/workers';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.subscription = this.http
       .delete(`${rootUrl}/${workerId}`, { headers })

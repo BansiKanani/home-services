@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-services-list',
-  templateUrl: './services-list.component.html'
+  templateUrl: './services-list.component.html',
+  styleUrls: ['./services-list.component.scss']
 })
 export class ServicesListComponent implements OnInit, OnDestroy {
   subscription;
@@ -12,7 +13,7 @@ export class ServicesListComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    const rootUrl = 'http://localhost:3000/api/services';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/services';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.subscription = this.http.get<any[]>(rootUrl, { headers }).subscribe(
       value => {
@@ -28,7 +29,7 @@ export class ServicesListComponent implements OnInit, OnDestroy {
   }
 
   onDelete(serviceId) {
-    const rootUrl = 'http://localhost:3000/api/services';
+    const rootUrl = 'https://home-services-api.herokuapp.com/api/services';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.subscription = this.http
       .delete(`${rootUrl}/${serviceId}`, { headers })

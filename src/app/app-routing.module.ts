@@ -13,6 +13,8 @@ import { WorkerDetailsComponent } from './admins/worker-details/worker-details.c
 import { ServiceRequestComponent } from './customers/service-request/service-request.component';
 import { WorkerIndexComponent } from './workers/worker-index/worker-index.component';
 import { WorkerNextComponent } from './workers/worker-next/worker-next.component';
+import { WorkerRegistrationComponent } from './workers/worker-registration/worker-registration.component';
+import { CustomerRegistrationComponent } from './customers/customer-registration/customer-registration.component';
 
 
 
@@ -24,12 +26,17 @@ const routes: Routes = [
   { path: 'login/worker', component: WorkerLoginComponent },
   { path: 'login/admin', component: AdminLoginComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
+
   { path: 'admin/add_service', component: AddServicesComponent },
   { path: 'admin/existing_workers', component: ExistingWorkersComponent },
   { path: 'admin/new_workers', component: NewWorkersComponent },
   { path: 'admin/services_list', component: ServicesListComponent},
   { path: 'admin/worker_details', component: WorkerDetailsComponent},
-  { path: 'customer/service_request', component: ServiceRequestComponent},
+
+  { path: 'user/service_request', component: ServiceRequestComponent},
+  { path: 'user/registration', component: CustomerRegistrationComponent},
+
+  { path: 'worker/registration', component: WorkerRegistrationComponent},
   { path: 'worker/index', component: WorkerIndexComponent },
   { path: 'worker/next', component: WorkerNextComponent}
   // { path: '/admin/assignments', component: WorkerDetailsComponent}

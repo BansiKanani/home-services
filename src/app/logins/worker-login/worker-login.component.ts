@@ -1,26 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { LoginService } from '../login.service';
+import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-worker-login',
   templateUrl: './worker-login.component.html',
   styleUrls: ['./worker-login.component.scss']
 })
-export class WorkerLoginComponent implements OnInit {
-  loginForm;
+export class WorkerLoginComponent {
+  constructor(private cookie: CookieService, private http: HttpClient) {}
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private loginService: LoginService
-  ) {
-    this.loginForm = this.formBuilder.group({ userid: '', password: '' });
+  onLogIn() {
+    this.http.get('https://home-services-api.herokuapp.com/api/workers').subscribe(
+      worker => {
+        this.cookie.set('workerId', worker[0]._id);
+        this.cookie.set('workerName', worker[0].name);
+        // console.log(JSON.parse(this.cookie.get('worker')));
+      },
+      err => console.error(err)
+    );
   }
 
-  onSubmit(userData) {
-    this.loginService.authenticate(userData, 'worker');
-    this.loginForm.reset();
+  onLogOut() {
+    this.cookie.delete('worker');
   }
-
-  ngOnInit() {}
 }

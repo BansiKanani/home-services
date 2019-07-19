@@ -1,0 +1,47 @@
+<form #workerForm="ngForm" style="border:1px solid #ccc">
+  <div class="container">
+    <p>Please fill in this form to create an account.</p>
+    <hr />
+
+    <label><b>Name</b></label>
+    <input formControlName="name" type="text" placeholder="Enter Name" required />
+
+    <label><b>Address</b></label>
+    <input  formControlName="address" type="text" placeholder="Enter Address" required />
+
+    <label><b>Work&nbsp; &nbsp; &nbsp; </b></label>
+    &nbsp; <input type="checkbox" value="Plumbing" /> &nbsp; <b>Plumbing</b>
+    &nbsp; <input type="checkbox" value="Electrician" /> &nbsp; <b>Electrician</b>
+    <br /> <br />
+
+    <label><b>Contact Number</b></label>
+    <input formControlName="phone" type="number" placeholder="Enter Contact Number" required />
+
+    <label><b>Date Of Birth</b></label>
+    <input formControlName="date" type="date" placeholder="Enter Pincode" required />
+
+    <label><b>Gender&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></label>
+    <input type="radio" value="m" /> <b>Male</b>
+    <input type="radio" value="f" />&nbsp;&nbsp;<b>Female</b> <br /><br />
+
+    <label><b>Aadhar Card</b></label>
+    <input formControlName="aadhar" type="number" placeholder="Enter Aadhar Number" required />
+    <label><b>Pan Card</b></label>
+    <input formControlName="pan" type="text" placeholder="Enter PanCard Number" required />
+
+    <label><b>Working Hours </b></label>
+    <input formControlName="from" type="number" placeholder="From" style="width:6rem;margin-right:1rem" />
+    <input formControlName="to" type="number" placeholder="To" style="width:80px" />
+    <br /><br />
+    <label for="psw"><b>Password</b></label>
+    <input formControlName="password" type="password" placeholder="Enter Password" name="psw" required />
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Submit</button>
+    </div>
+  </div>
+</form>

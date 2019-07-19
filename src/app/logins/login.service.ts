@@ -15,7 +15,7 @@ export class LoginService {
 
   authenticate(userData, userType): any {
     // this.setUrl(userType);
-    this.rootUrl = 'http://localhost:3000/api/login';
+    this.rootUrl = 'https://home-services-api.herokuapp.com/api/login';
     console.log(userData);
 
     this.body = { mobile: userData.userid, password: userData.password };
